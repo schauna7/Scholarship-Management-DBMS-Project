@@ -69,7 +69,7 @@
         <p>Explore opportunities for students and companies</p>
         <div class="options">
             <a href="landing_company.php" class="btn btn-lg company">Join as Company</a>
-            <a href="index.php" class="btn btn-lg student">Join as Student</a>
+            <a href="landing_student.php" class="btn btn-lg student">Join as Student</a>
         </div>
     </div>
 </body>
