@@ -1,3 +1,10 @@
+<?php
+// Check if the success parameter is set
+if (isset($_GET['success']) && $_GET['success'] == 1) {
+    echo "<p>Scholarship created successfully!</p>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

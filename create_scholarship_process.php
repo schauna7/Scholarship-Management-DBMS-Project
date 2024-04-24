@@ -24,7 +24,7 @@ $sql = "INSERT INTO scholarship (scholarship_name, state, caste, gender, tenth_s
 // Execute the query
 if (mysqli_query($conn, $sql)) {
     // Redirect back to the home page after successful scholarship creation
-    header("Location: home.php");
+    header("Location: home.php?success=1");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
