@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the signup page
-header("Location: landing_company.php");
+header("Location: landing_page.php");
 exit();
 ?>

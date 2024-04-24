@@ -42,8 +42,9 @@ $studentName = $_SESSION['username'];
                         <a class="nav-link" href="#">Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="landing_student.php">Logout</a>
-                    </li>
+    <a class="nav-link" href="logout.php">Logout</a>
+</li>
+
                 </ul>
             </div>
         </div>
