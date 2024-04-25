@@ -57,6 +57,7 @@
             <option value="General">General</option>
             <option value="SC/ST">SC/ST</option>
             <option value="EWS">EWS</option>
+            <option value="OBC">OBC</option>
             <option value="Physically Challenged">Physically Challenged</option>
             <!-- Add more caste options as needed -->
         </select><br><br>

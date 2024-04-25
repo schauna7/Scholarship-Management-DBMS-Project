@@ -49,6 +49,11 @@
             echo '<a href="delete_scholarship.php?id=' . $row["scholarship_id"] . '"><button>Delete</button></a>';
             echo '</div>';
 
+             // View Applicants button
+             echo '<div class="buttons">';
+             echo '<a href="view_applicants.php?scholarship_id=' . $row["scholarship_id"] . '"><button>View Applicants</button></a>';
+             echo '</div>';
+ 
             echo '</div>'; // End of scholarship-box
         }
     } else {

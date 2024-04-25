@@ -72,6 +72,13 @@ while($row = mysqli_fetch_assoc($result)) {
 // Close the database connection
 mysqli_close($conn);
 ?>
+<?php foreach ($eligible_scholarships as $scholarship): ?>
+    <li class="list-group-item">
+        <h3><?php echo $scholarship['scholarship_name']; ?></h3>
+        <p><?php echo $scholarship['scholarship_description']; ?></p>
+        <a href="apply_for_scholarship.php?scholarship_id=<?php echo $scholarship['scholarship_id']; ?>" class="btn btn-primary">Apply</a>
+    </li>
+<?php endforeach; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +101,23 @@ mysqli_close($conn);
                         <li class="list-group-item">
                             <h3><?php echo $scholarship['scholarship_name']; ?></h3>
                             <p><?php echo $scholarship['scholarship_description']; ?></p>
-                            <button class="btn btn-primary">Apply</button> <!-- Add Apply button -->
+                            <button class="btn btn-primary" onclick="applyForScholarship(<?php echo $scholarship['scholarship_id']; ?>)">Apply</button>
+
+                            <script>
+    function applyForScholarship(scholarshipId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // No message displayed after successful submission
+            }
+        };
+        xhttp.open("GET", "apply_for_scholarship.php?scholarship_id=" + scholarshipId, true);
+        xhttp.send();
+    }
+</script>
+
+
+
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
