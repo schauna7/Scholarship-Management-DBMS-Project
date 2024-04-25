@@ -1,39 +1,37 @@
 <?php
     session_start();
+    // Redirect if user is already logged in
     if(isset($_SESSION['username'])){
         header("Location: home.php");
         exit(); // Ensure that script stops execution after redirection
     }
-?>
-<?php
-    $login = false;
+    
     include('connection.php');
+    $login = false;
+
     if (isset($_POST['submit'])) {
         $username = $_POST['user'];
         $password = $_POST['pass'];
 
-        $sql = "SELECT * FROM users WHERE username = '$username' OR email = '$username'";  
-        $result = mysqli_query($conn, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
-        
-        if($row){  
-            if(password_verify($password, $row["password"])){
-                $login=true;
-                session_start();
+        $sql = "SELECT id, username, password FROM users WHERE username = ? OR email = ?";  
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username, $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $stmt->close();
 
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['loggedin'] = true;
-                header("Location: student_home.php"); // Redirect to student home page
-                exit(); // Ensure that script stops execution after redirection
-            }
-        }  
-        else{  
-            echo  '<script>
-                        alert("Login failed. Invalid username or password!!");
-                        window.location.href = "student_login.php";
-                    </script>';
-        }     
+        if($row && password_verify($password, $row["password"])){
+            $login=true;
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['loggedin'] = true;
+            // Set the student ID session variable
+            $_SESSION['student_id'] = $row['id'];
+            header("Location: student_home.php"); // Redirect to student home page
+            exit(); // Ensure that script stops execution after redirection
+        } else {
+            $error = "Login failed. Invalid username or password!!";
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -49,6 +47,11 @@
     <div id="form">
         <h1 id="heading">Login Form</h1>
         <form name="form" action="student_login.php" method="POST" onsubmit="return isValid()">
+            <?php if(isset($error)): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
             <label>Enter Username/Email: </label>
             <input type="text" id="user" name="user"></br></br>
             <label>Password: </label>

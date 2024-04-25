@@ -22,7 +22,9 @@ if (mysqli_query($conn, $sql)) {
 
 // Close the database connection
 mysqli_close($conn);
-?><?php
+?>
+
+<?php
 // Include the database connection file
 include "connection.php";
 
@@ -43,10 +45,16 @@ if (mysqli_query($conn, $sql)) {
     header("Location: login.php");
     exit();
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    // Check if the error is due to a duplicate entry
+    if (strpos(mysqli_error($conn), 'Duplicate entry') !== false) {
+        echo "Error: Email already exists.";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
 }
 
 // Close the database connection
 mysqli_close($conn);
 ?>
+
 
