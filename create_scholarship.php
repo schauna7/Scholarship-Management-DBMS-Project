@@ -59,6 +59,7 @@
             <option value="EWS">EWS</option>
             <option value="OBC">OBC</option>
             <option value="Physically Challenged">Physically Challenged</option>
+            <option value="All">All</option>
             <!-- Add more caste options as needed -->
         </select><br><br>
         

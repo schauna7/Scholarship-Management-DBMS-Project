@@ -76,7 +76,8 @@ mysqli_close($conn);
     <li class="list-group-item">
         <h3><?php echo $scholarship['scholarship_name']; ?></h3>
         <p><?php echo $scholarship['scholarship_description']; ?></p>
-        <a href="apply_for_scholarship.php?scholarship_id=<?php echo $scholarship['scholarship_id']; ?>" class="btn btn-primary">Apply</a>
+        <button class="btn btn-primary" onclick="applyForScholarship(<?php echo $scholarship['scholarship_id']; ?>)">Apply</button>
+        <span id="applyMessage_<?php echo $scholarship['scholarship_id']; ?>" style="display: none;">Thank you for applying!</span>
     </li>
 <?php endforeach; ?>
 
@@ -102,22 +103,7 @@ mysqli_close($conn);
                             <h3><?php echo $scholarship['scholarship_name']; ?></h3>
                             <p><?php echo $scholarship['scholarship_description']; ?></p>
                             <button class="btn btn-primary" onclick="applyForScholarship(<?php echo $scholarship['scholarship_id']; ?>)">Apply</button>
-
-                            <script>
-    function applyForScholarship(scholarshipId) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // No message displayed after successful submission
-            }
-        };
-        xhttp.open("GET", "apply_for_scholarship.php?scholarship_id=" + scholarshipId, true);
-        xhttp.send();
-    }
-</script>
-
-
-
+                            <span id="applyMessage_<?php echo $scholarship['scholarship_id']; ?>" style="display: none;">Thank you for applying!</span>
                         </li>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -126,5 +112,18 @@ mysqli_close($conn);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        function applyForScholarship(scholarshipId) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Display apply message
+                    document.getElementById("applyMessage_" + scholarshipId).style.display = "inline";
+                }
+            };
+            xhttp.open("GET", "apply_for_scholarship.php?scholarship_id=" + scholarshipId, true);
+            xhttp.send();
+        }
+    </script>
 </body>
 </html>
