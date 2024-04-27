@@ -1,3 +1,40 @@
+<!-- Navbar -->
+<link rel="stylesheet" href="create.css">
+
+<div class="navbar">
+    <a href="home.php">Home</a>
+    <a href="create_scholarship.php" class="active">Create Scholarship</a>
+    <a href="view_scholarships.php">View Scholarships</a>
+    <a href="logout.php" style="float:right">Logout</a>
+</div>
+
+<style>
+    /* Navbar styles */
+    .navbar {
+        background-color: #4E6479;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,17 +113,22 @@
         <label for="twelfth_score">12th Score:</label><br>
         <input type="number" id="twelfth_score" name="twelfth_score"><br><br>
         
-        <label for="nationality">Nationality:</label><br>
-        <input type="text" id="nationality" name="nationality" required><br><br>
         
+         
+        <label for="nationality">Nationality:</label><br>
+        <select id="nationality" name="nationality" required>
+            <option value="Indian">Indian</option>
+            <option value="Others">Others</option>
+         
+        </select><br><br>
         <label for="annual_income">Annual Income:</label><br>
         <input type="number" id="annual_income" name="annual_income" required><br><br>
         
         <label for="grant_amount">Grant Amount:</label><br>
         <input type="number" id="grant_amount" name="grant_amount" required><br><br>
         
-        <label for="scholarship_description">Scholarship Description:</label><br>
-        <textarea id="scholarship_description" name="scholarship_description" rows="4" cols="50" required></textarea><br><br>
+        <label for="scholarship_desc">Scholarship desc:</label><br>
+        <textarea id="scholarship_desc" name="scholarship_desc" rows="4" cols="50" required></textarea><br><br>
         
         <input type="submit" value="Submit">
     </form>

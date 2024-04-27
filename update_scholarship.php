@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Scholarship</title>
+    <link rel="stylesheet" type="text/css" href="create.css">
+    
 </head>
 <body>
     <h2>Update Scholarship</h2>

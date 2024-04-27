@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Scholarships</title>
+    <link rel="stylesheet" type="text/css" href="view.css">
+    <style>
+       /* Navbar styles */
+    .navbar {
+        background-color: #4E6479;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
     <style>
         .scholarship-box {
             border: 1px solid #ccc;

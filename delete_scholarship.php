@@ -1,3 +1,30 @@
+<link rel="stylesheet" type="text/css" href="delete.css">
+    <style>
+       /* Navbar styles */
+    .navbar {
+        background-color: #4E6479;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
 <?php
 // Include the database connection file
 include "connection.php";
@@ -35,6 +62,10 @@ if(isset($_GET['id'])) {
                 $sql_delete = "DELETE FROM scholarship WHERE scholarship_id = '$scholarship_id'";
                 if (mysqli_query($conn, $sql_delete)) {
                     echo "Scholarship '{$row['scholarship_name']}' deleted successfully!";
+                                   
+    header("refresh:2;url=home.php");
+    exit; 
+
                 } else {
                     echo "Error deleting scholarship: " . mysqli_error($conn);
                 }
@@ -43,9 +74,17 @@ if(isset($_GET['id'])) {
             }
         } elseif(isset($_POST['cancel'])) {
             echo "Deletion cancelled.";
+                           
+    header("refresh:2;url=home.php");
+    exit; 
+
         }
     } else {
         echo "Scholarship not found.";
+                       
+    header("refresh:2;url=home.php");
+    exit; 
+
     }
 } else {
     echo "Scholarship ID not provided.";

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Signup</title>
+    <link rel="stylesheet" href="csignup.css">
 </head>
 <body>
+    <div class="container">
     <h2>Company Signup</h2>
     <form action="signup_process.php" method="post">
         <label for="company_name">Company Name:</label><br>
@@ -19,5 +21,6 @@
         
         <input type="submit" value="Sign Up">
     </form>
+</div>
 </body>
 </html>

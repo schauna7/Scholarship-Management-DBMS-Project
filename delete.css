@@ -1,0 +1,43 @@
+/* CSS for the delete confirmation form */
+form {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"][name="cancel"] {
+    background-color: #f44336; /* Red color for cancel button */
+}
+
+input[type="submit"][name="cancel"]:hover {
+    background-color: #da190b; /* Darker red color on hover */
+}
+/* CSS for centering the container */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 400px; /* Adjust the width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}

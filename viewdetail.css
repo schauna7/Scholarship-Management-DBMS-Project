@@ -1,0 +1,22 @@
+/* CSS styles for the h2 heading */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* CSS styles for the details of the user */
+p {
+    margin-bottom: 10px;
+}
+
+/* CSS styles for strong tags within paragraphs */
+p strong {
+    margin-right: 5px;
+}
+
+/* CSS styles for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}

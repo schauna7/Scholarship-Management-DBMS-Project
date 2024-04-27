@@ -1,0 +1,55 @@
+/* csignup.css */
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8eded;
+    margin: 0;
+    padding: 0;
+   
+}
+
+/* Form container */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Input field styling */
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

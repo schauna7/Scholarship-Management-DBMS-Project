@@ -15,7 +15,7 @@ $sql = "INSERT INTO company (company_name, email, password) VALUES ('$company_na
 
 // Execute the query
 if (mysqli_query($conn, $sql)) {
-    echo "Sign up successful!";
+    header("Location: home.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
@@ -44,17 +44,8 @@ if (mysqli_query($conn, $sql)) {
     // Redirect to the login page after successful signup
     header("Location: login.php");
     exit();
-} else {
-    // Check if the error is due to a duplicate entry
-    if (strpos(mysqli_error($conn), 'Duplicate entry') !== false) {
-        echo "Error: Email already exists.";
-    } else {
-        echo "Error: " . mysqli_error($conn);
-    }
-}
-
+} 
 // Close the database connection
 mysqli_close($conn);
 ?>
-
 

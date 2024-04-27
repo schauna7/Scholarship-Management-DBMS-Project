@@ -91,25 +91,7 @@ mysqli_close($conn);
     <link rel="stylesheet" href="style.css"> <!-- Include your custom stylesheet -->
 </head>
 <body>
-    <div class="container mt-4">
-        <h1>Eligible Scholarships</h1>
-        <?php if(empty($eligible_scholarships)): ?>
-            <p>No scholarships are currently available for you.</p>
-        <?php else: ?>
-            <ul class="list-group">
-                <?php foreach ($eligible_scholarships as $scholarship): ?>
-                    <?php if(isset($scholarship['scholarship_name']) && isset($scholarship['scholarship_description'])): ?>
-                        <li class="list-group-item">
-                            <h3><?php echo $scholarship['scholarship_name']; ?></h3>
-                            <p><?php echo $scholarship['scholarship_description']; ?></p>
-                            <button class="btn btn-primary" onclick="applyForScholarship(<?php echo $scholarship['scholarship_id']; ?>)">Apply</button>
-                            <span id="applyMessage_<?php echo $scholarship['scholarship_id']; ?>" style="display: none;">Thank you for applying!</span>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>

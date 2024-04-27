@@ -92,12 +92,56 @@ if(isset($_POST['submit'])){
             <input type="date" id="dob" name="dob" required><br><br>
             <label>Select State: </label>
             <select id="state" name="state" required>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Goa">Goa</option>
+            <option value="AP">Andhra Pradesh</option>
+	<option value="AR">Arunachal Pradesh</option>
+	<option value="AS">Assam</option>
+	<option value="BR">Bihar</option>
+	<option value="CT">Chhattisgarh</option>
+	<option value="GA">Gujarat</option>
+	<option value="HR">Haryana</option>
+	<option value="HP">Himachal Pradesh</option>
+	<option value="JK">Jammu and Kashmir</option>
+	<option value="GA">Goa</option>
+	<option value="JH">Jharkhand</option>
+	<option value="KA">Karnataka</option>
+	<option value="KL">Kerala</option>
+	<option value="MP">Madhya Pradesh</option>
+	<option value="MH">Maharashtra</option>
+        <option value="MN">Manipur</option>
+        <option value="ML">Meghalaya</option>
+	<option value="MZ">Mizoram</option>
+	<option value="NL">Nagaland</option>
+	<option value="OR">Odisha</option>
+	<option value="PB">Punjab</option>
+	<option value="RJ">Rajasthan</option>
+	<option value="SK">Sikkim</option>
+	<option value="TN">Tamil Nadu</option>
+	<option value="TG">Telangana</option>
+	<option value="TR">Tripura</option>
+	<option value="UT">Uttarakhand</option>
+	<option value="UP">Uttar Pradesh</option>
+	<option value="WB">West Bengal</option>
+	<option value="AN">Andaman and Nicobar Islands</option>
+	<option value="CH">Chandigarh</option>
+	<option value="DN">Dadra and Nagar Haveli</option>
+	<option value="DD">Daman and Diu</option>
+	<option value="DL">Delhi</option>
+	<option value="LD">Lakshadweep</option>
+	<option value="PY">Puducherry</option>
+        </select><br><br>
+        
                 <!-- Add more options as needed -->
-            </select><br><br>
-            <label>Enter Caste: </label>
-            <input type="text" id="caste" name="caste" required><br><br>
+            
+                <label for="caste">Caste:</label><br>
+        <select id="caste" name="caste" required>
+            <option value="General">General</option>
+            <option value="SC/ST">SC/ST</option>
+            <option value="EWS">EWS</option>
+            <option value="OBC">OBC</option>
+            <option value="Physically Challenged">Physically Challenged</option>
+            
+            <!-- Add more caste options as needed -->
+        </select><br><br>
             <label>Enter Tenth Score: </label>
             <input type="text" id="tenth_score" name="tenth_score" required><br><br>
             <label>Enter Twelfth Score: </label>
@@ -105,7 +149,12 @@ if(isset($_POST['submit'])){
             <label>Enter Annual Income: </label>
             <input type="text" id="annual_income" name="annual_income" required><br><br>
             <label>Enter Nationality: </label>
-            <input type="text" id="nationality" name="nationality" required><br><br>
+            <label>Select Nationality: </label>
+            <select id="nationality" name="nationality" required>
+                <option value="Indian">Indian</option>
+                <option value="Others">Others</option>
+                <!-- Add more options as needed -->
+            </select><br><br>
             <label>Select Gender: </label><br>
             <input type="radio" id="male" name="gender" value="Male" required>
             <label for="male">Male</label><br>
